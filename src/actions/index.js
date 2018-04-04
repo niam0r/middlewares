@@ -3,12 +3,11 @@ import { FETCH_USERS } from './types';
 
 export function fetchUsers() {
   const request = axios.get('http://jsonplaceholder.typicode.com/users');
-  console.log(request);
 
   return {
     type: FETCH_USERS,
     payload: [
-      { name: 'Jane' },
+      { name: 'Jake' },
       { name: 'Alex' },
       { name: 'Jim' }
     ]
