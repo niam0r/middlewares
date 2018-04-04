@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../actions';
 
-class UserList extends React.Component {
+class UserList extends Component {
+  componentWillMount() {
+    this.props.fetchUsers();
+  }
+
   renderUser(user) {
     return (
       <div className="card card-block">
@@ -20,3 +25,10 @@ class UserList extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return { users: state.users };
+}
+
+export default connect(mapStateToProps, actions)(UserList);
+
