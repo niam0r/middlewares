@@ -6,11 +6,7 @@ export function fetchUsers() {
 
   return {
     type: FETCH_USERS,
-    payload: [
-      { name: 'Jake' },
-      { name: 'Alex' },
-      { name: 'Jim' }
-    ]
+    payload: request
   };
 }
 
